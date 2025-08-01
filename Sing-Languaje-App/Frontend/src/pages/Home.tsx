@@ -1,35 +1,50 @@
 import { useNavigate } from 'react-router-dom';
+import FloatingBubbles from '../components/FloatingBubbles';
 import '../styles/Home.css';
+import Footer from '../components/Footer/Footer';
 
 const Home = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const handleStart = () => {
-    // Navegar a la página principal de la app cuando esté lista
-    navigate('/main');
-};
-
-return (
+  return (
     <div className="home-container">
-    <main className="main-content">
-        <h1 className="title">Utiliza el lenguaje de señas</h1>
-        <button 
-        className="start-button"
-        onClick={handleStart}
-        >
-        Comenzar
-        </button>
-    </main>
-    <footer className="footer">
-        <p>© {new Date().getFullYear()} Sistema de Traducción de Lenguaje de Señas</p>
-        <div className="footer-links">
-        <a href="/about">Acerca de</a>
-        <a href="/contact">Contacto</a>
-        <a href="/privacy">Privacidad</a>
+      <FloatingBubbles />
+      
+      <header className="header">
+        <nav className="nav-links">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#proyecto">Proyecto</a>
+          <a href="https://github.com/tu-usuario/tu-repositorio" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#vision">Visión</a>
+        </nav>
+      </header>
+
+      <main className="main-content">
+        <div className="hero-text">
+          <h1 className="title">Conoce el lenguaje de señas</h1>
+          <p className="subtitle">Desarrollamos una solución a la comunicación</p>
+          <button 
+            onClick={() => navigate('/main')}
+            className="cta-button"
+          >
+            Continuar
+          </button>
         </div>
-    </footer>
+      </main>
+
+      <Footer 
+        companyName="SeñasApp"
+        links={[
+          { text: "Trabajos", url: "#works" },
+          { text: "Servicios", url: "#services" },
+          { text: "Nosotros", url: "#about" },
+          { text: "Precios", url: "#pricing" },
+          { text: "Contacto", url: "#contact" }
+        ]}
+        className="custom-footer-class"
+      />
     </div>
-);
+  );
 };
 
 export default Home;
