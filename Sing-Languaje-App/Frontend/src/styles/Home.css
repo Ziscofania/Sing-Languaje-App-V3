@@ -33,7 +33,7 @@ body {
   color: white;
 }
 
-/* Burbujas más visibles */
+/* Burbujas */
 .bubble {
   position: absolute;
   border-radius: 50%;
@@ -48,15 +48,17 @@ body {
   50% { transform: translateY(-40px) rotate(5deg); }
 }
 
-/* Header minimalista */
+/* Header centrado */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1.5rem 5%;
+  height: var(--header-height);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
   z-index: 100;
 }
 
@@ -111,30 +113,7 @@ body {
   margin-right: auto;
 }
 
-/* Footer minimalista */
-.footer {
-  padding: 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.footer p {
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
-
-/* Efectos para desktop */
-@media (min-width: 1024px) {
-  .bubble {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
-  .title {
-    font-size: 3.5rem;
-  }
-}
-/* Estilos para el botón CTA */
+/* Botón CTA */
 .cta-button {
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
@@ -178,7 +157,30 @@ body {
   transform: translateX(100%);
 }
 
-/* Ajustes responsivos para el botón */
+/* Footer (sin cambios) */
+.footer {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Responsivo */
+@media (min-width: 1024px) {
+  .bubble {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .cta-button {
     padding: 0.8rem 2rem;
