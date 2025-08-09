@@ -56,7 +56,7 @@ html, body {
 }
 
 h2 {
-    color: #6b4e9b; /* Morado pastel */
+    color: #9790a3; /* Morado pastel */
     font-weight: bold;
 }
 
@@ -66,15 +66,17 @@ p {
 }
 
 .frase {
-    font-size: 1.4rem;
-    font-style: italic;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    width: 90%;
-    margin: 30px auto;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #ffffff; /* Texto blanco */
+  background: none; /* Sin fondo */
+  padding: 15px;
+  border-radius: 0; /* Sin bordes redondeados */
+  text-align: center;
+  width: 50%;
+  margin: 0 auto; /* Centra horizontalmente */
 }
+
 
 .comunicate {
     background: #8a6bb5;

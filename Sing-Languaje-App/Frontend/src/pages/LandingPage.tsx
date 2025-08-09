@@ -63,10 +63,8 @@ export const LandingPage: React.FC = () => {
 
       {/* Frase */}
       <div className="frase">
-        <h2>
           "Rompiendo Barreras, Conectando Mundos: La app que transforma señas en
           palabras para una comunicación sin límites."
-        </h2>
       </div>
 
       {/* Video */}
@@ -86,20 +84,11 @@ export const LandingPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Manos */}
-      <div className="hand left-hand">
-        <img src="/assets/left-hand.png" alt="Mano izquierda" />
-      </div>
-      <div className="hand right-hand">
-        <img src="/assets/right-hand.png" alt="Mano derecha" />
-      </div>
 
       {/* Contenido de bienvenida */}
       <div className="content">
-        <h1>Bienvenido a la aplicación de lenguaje de señas</h1>
         <a href="/traductor" className="start-button">Iniciar</a>
-      </div>
-
+      </div> 
       {/* Footer */}
       <footer className="footer">
         <div className="footer-container">
