@@ -70,7 +70,7 @@ export const LandingPage: React.FC = () => {
       {/* Video */}
       <div className="video-container">
         <video controls>
-          <source src="/assets/videos/video.mp4" type="video/mp4" />
+          <source src="videos/Y2meta.app-¿La lengua de señas es universal_.mp4" type="video/mp4" />
         </video>
         <div className="text-content">
           <h3>Video ilustrativo de la realidad cultural de las personas sordomudas</h3>
