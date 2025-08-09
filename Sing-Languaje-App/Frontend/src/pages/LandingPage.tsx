@@ -1,36 +1,104 @@
-import { useNavigate } from 'react-router-dom';
-import FloatingBubbles from '../components/FloatingBubbles';
-import '../styles/Home.css';
+import React from "react";
+import "../styles/navbar.css";
+import "../styles/general.css";
 import "../styles/footer.css";
 
-const Home = () => {
-  const navigate = useNavigate();
-
+export const LandingPage: React.FC = () => {
   return (
-    <div className="home-container">
-      <FloatingBubbles />
-      
-      <header className="header">
-        <nav className="nav-links">
-          <a href="#nosotros">Nosotros</a>
-          <a href="#proyecto">Proyecto</a>
-          <a href="https://github.com/tu-usuario/tu-repositorio" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="#vision">Visión</a>
-        </nav>
+    <>
+      {/* Hero Section */}
+      <header className="hero">
+        <div className="overlay"></div>
+        <h1>Explora el Lenguaje de Señas</h1>
       </header>
 
-      <main className="main-content">
-        <div className="hero-text">
-          <h1 className="title">Conoce el lenguaje de señas</h1>
-          <p className="subtitle">Desarrollamos una solución a la comunicación</p>
-          <button 
-            onClick={() => navigate('/landing')}
-            className="cta-button"
+      {/* Navbar */}
+      <nav className="navbar">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about">Acerca de Nosotros</a></li>
+          <li><a href="/traductor">Traductor</a></li>
+          <li><a href="/cursos">Cursos</a></li>
+        </ul>
+      </nav>
+
+      {/* Sección Situación */}
+      <div className="text-container">
+        <h2 className="title situacion">Situación</h2>
+        <p>
+          En Colombia, cerca de 459,772 personas viven con discapacidad auditiva,
+          enfrentándose a barreras significativas en su comunicación diaria...
+        </p>
+      </div>
+
+      {/* Sección Aporte */}
+      <div className="text-container">
+        <h2 className="subtitulo">Aporte</h2>
+        <p>
+          Estamos transformando la comunicación y derribando barreras para la comunidad sordomuda...
+        </p>
+      </div>
+
+      {/* Sección de gráficas */}
+      <div className="charts-container">
+        <h2>Datos en contexto: Discapacidad Auditiva en Colombia</h2>
+
+        {[1, 2, 3, 4, 5, 6, 7].map((chartId, index) => (
+          <div
+            key={chartId}
+            className={`chart-row ${index === 6 ? "full-width" : ""}`}
           >
-            Continuar
-          </button>
+            <div className="chart-box">
+              <canvas id={`chart${chartId}`}></canvas>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Info box */}
+      <div className="info-box">
+        <h2 className="recuadro">¿Necesitas más información?</h2>
+        <button className="comunicate">Comunícate con nosotros</button>
+      </div>
+
+      {/* Frase */}
+      <div className="frase">
+        <h2>
+          "Rompiendo Barreras, Conectando Mundos: La app que transforma señas en
+          palabras para una comunicación sin límites."
+        </h2>
+      </div>
+
+      {/* Video */}
+      <div className="video-container">
+        <video controls>
+          <source src="/assets/videos/video.mp4" type="video/mp4" />
+        </video>
+        <div className="text-content">
+          <h3>Video ilustrativo de la realidad cultural de las personas sordomudas</h3>
+          <p>Agradecimientos al canal de CuriosaMente por prestar los derechos de autor para fines educativos.</p>
+          <p>
+            Haz clic en el siguiente enlace para visitar el canal de YouTube:{" "}
+            <a href="https://www.youtube.com/curiosamente" target="_blank" rel="noreferrer">
+              CuriosaMente
+            </a>
+          </p>
         </div>
-      </main>
+      </div>
+
+      {/* Manos */}
+      <div className="hand left-hand">
+        <img src="/assets/left-hand.png" alt="Mano izquierda" />
+      </div>
+      <div className="hand right-hand">
+        <img src="/assets/right-hand.png" alt="Mano derecha" />
+      </div>
+
+      {/* Contenido de bienvenida */}
+      <div className="content">
+        <h1>Bienvenido a la aplicación de lenguaje de señas</h1>
+        <a href="/traductor" className="start-button">Iniciar</a>
+      </div>
 
       {/* Footer */}
       <footer className="footer">
@@ -116,8 +184,8 @@ const Home = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default LandingPage;
