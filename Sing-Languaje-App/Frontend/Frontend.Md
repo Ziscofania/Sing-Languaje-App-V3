@@ -1,65 +1,65 @@
-# Frontend - Sign Language App  
+# Frontend Application - Sign Language Project
 
-**Proyecto frontend para una aplicación de lenguaje de señas**  
+## Docker Container Management
 
----
-
-## Requisitos Previos  
-Asegúrate de tener instalado:  
-- [Node.js](https://nodejs.org/) (v18 o superior)  
-- [Docker](https://www.docker.com/) (opcional, para ejecutar en contenedor)  
-- [Git](https://git-scm.com/)  
-
----
-
-## Configuración Inicial  
-
-### **1. Clonar el repositorio**  
+### Build and Run Container (Manual Method)
 ```bash
-git clone https://github.com/Ziscofania/Sing-Languaje-App-V3.git
-```
-```bash
-cd sign-language-app/Frontend
-```
-
-### **2. Instalar dependencias**
-```bash
-
-npm install
-
-Librerías principales
-
-    Vite (build tool)
-
-    React (opcional, si lo usas)
-
-    TypeScript
-
-    Otras dependencias (listarlas si son clave, ej: axios, react-router-dom)
-```
-Ejecución Local
-Modo desarrollo (con hot-reload)
-
-```bash
-npm run dev
-```
-🔹 Abre tu navegador en: http://localhost:5173
-Build para producción
-```bash
-
-npm run build
-```
-📁 Los archivos estáticos se generan en /dist.
-🐳 Dockerización
-1. Construir la imagen Docker
-```bash
-
 docker build -t frontend-app .
-```
-2. Ejecutar el contenedor
-```bash
-
 docker run -d -p 8080:80 --name sign-language-frontend frontend-app
-```
-# Abre: http://localhost:8080
-```bash
+
+Access application at: http://localhost:8080
+Docker Compose (Recommended Production Setup)
+bash
+
+docker-compose up
+
+Docker Compose Control Commands
+bash
+
+# Run in detached mode
+docker-compose up -d
+
+# Stop containers
+docker-compose stop
+
+# Remove containers and networks
+docker-compose down
+
+# View container logs
+docker-compose logs -f
+
+# Rebuild images
+docker-compose up --build
+
+Troubleshooting Commands
+bash
+
+# Change default port (if 8080 is occupied)
+docker-compose down && docker-compose up -p 3000:80
+
+# Full system cleanup
+docker system prune -a --volumes
+
+Project Setup Notes
+
+    Node.js installation is optional when using Docker
+
+    Code changes require image rebuild:
+
+bash
+
+docker-compose up --build
+
+    For local development with hot-reload:
+
+bash
+
+npm run dev
+
+(Requires local Node.js installation)
+Basic Project Commands
+bash
+
+git clone https://github.com/Ziscofania/Sing-Languaje-App-V3.git
+cd Sing-Languaje-App-V3/Frontend
+docker-compose up
