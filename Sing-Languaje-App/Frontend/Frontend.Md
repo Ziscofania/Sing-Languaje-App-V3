@@ -70,3 +70,7 @@ cd Sing-Languaje-App-V3/Frontend
 ```bash
 docker-compose up
 ```
+Codigo para generar la carpeta dist 
+´´´bash
+npm run build
+´´´
