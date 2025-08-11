@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Instalar dependencias
-RUN npm ci
+RUN npm ci && npm cache clean --force 
 
 # Copiar el resto de los archivos
 COPY . .
