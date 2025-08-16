@@ -14,7 +14,7 @@ const Home = () => {
         <nav className="nav-links">
           <a href="#nosotros">Nosotros</a>
           <a href="#proyecto">Proyecto</a>
-          <a href="https://github.com/tu-usuario/tu-repositorio" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/Ziscofania/Sing-Languaje-App-V3" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="#vision">Visión</a>
         </nav>
       </header>
